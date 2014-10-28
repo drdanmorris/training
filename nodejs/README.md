@@ -1,4 +1,11 @@
-training
-========
+#Node.JS Training Stuff
 
-Assorted Training Material
+##Mongo
+
+The connection string you will need is:
+
+```
+mongodb://drdanmorris:guest@ds047020.mongolab.com:47020/airnz
+```
+
+
