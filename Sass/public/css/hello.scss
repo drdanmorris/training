@@ -1,0 +1,53 @@
+$bgcolor: #f6f6f6;
+
+html {
+	font-size: 16px;  // reference font
+}
+
+body {
+	font-family: arial, helvetica, sans-serif;
+	background-color: $bgcolor;
+
+	h1 {
+		font-size: rem-calc(18);
+	}
+}
+
+$height: 100px;
+
+@mixin tile($color, $hpos, $vpos) {
+	background-color: $color;
+	#{$hpos}: 0;
+	#{$vpos}: 0;
+}
+
+div {
+	background-color: darken($bgcolor, 20);
+	height: $height * 2 + 20;
+	width: $height * 4 + 20;
+	position: relative;
+
+	div {
+		height: $height;
+		width: $height * 2;
+		background-color: #f66;
+		position:absolute;
+
+		&:nth-child(1) {
+			@include tile(red, 'left', 'top');
+		}
+
+		&:nth-child(2) {
+			@include tile(blue, 'right', 'top');
+		}
+
+		&:nth-child(3) {
+			@include tile(green, 'left', 'bottom');
+		}
+
+		&:nth-child(4) {
+			@include tile(yellow, 'right', 'bottom');
+		}
+	}
+
+}

@@ -1,0 +1,19 @@
+body {
+	font-family: arial;
+	font-size: 12pt;
+}
+
+table {
+	border: solid 1px #909090;
+	border-collapse: collapse;
+	width: 600px;
+}
+
+td, th {
+	border: solid 1px #a0a0a0;
+	padding:3px 20px;
+}
+
+tr:nth-child(odd) td {
+	background-color: #e0e0e0;
+}

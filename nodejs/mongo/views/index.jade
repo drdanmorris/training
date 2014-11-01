@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Air New Zealand Jet Fleet
+    link(href='/css/fleet.css', rel='stylesheet')
+  body
+    header
+      h1 Air New Zealand Jet Fleet
+    table(border=1)
+      tr
+        th Registration
+        th Type
+        th Model
+        th Year
+      each plane in fleet
+        tr
+          td= plane.reg
+          td= plane.type
+          td= plane.model
+          td= plane.year
