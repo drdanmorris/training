@@ -1,0 +1,33 @@
+html {
+  font-family: calibri, arial, helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #303030; }
+
+div {
+  width: 80px;
+  color: white;
+  font-weight: bold;
+  float: left;
+  margin: 20px;
+  text-align: center;
+  padding: 20px; }
+  div:nth-child(1) {
+    background-color: #993366; }
+  div:nth-child(2) {
+    background-color: #cc6699; }
+  div:nth-child(3) {
+    background-color: #4d1933; }
+  div:nth-child(4) {
+    background-color: rgba(153, 51, 102, 0.8); }
+  div:nth-child(5) {
+    background-color: #8b64b2; }
+  div:nth-child(6) {
+    background-color: #339966; }
+  div:nth-child(7) {
+    background-color: #cc0066; }
+  div:nth-child(8) {
+    background-color: #666666; }
+  div:nth-child(9) {
+    background-color: #66cc99; }
+
+/*# sourceMappingURL=hello.css.map */

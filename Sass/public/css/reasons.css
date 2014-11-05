@@ -1,0 +1,115 @@
+/* Reason 1:  no variables in CSS */
+
+var $theme-color = #e91867;
+
+h1 {
+    font-size: 1.5rem;
+    color: #e91867;
+}
+
+input[type="text"] {
+    background-color: #e91867;
+    color: white;
+}
+
+.theme {
+    border: solid 1px #e91867;
+    padding: 12px;
+    margin: 10px;
+}
+
+
+/* Reason 2:  easier child selectors; */
+main {
+    background-color: #e0e0e0;
+    padding: 12px;
+    color: #303030;
+}
+
+main h1 {
+    font-size:2rem;
+    color: red;
+    margin: 12px 0;
+}
+
+main section {
+    padding: 12px;
+    border: solid 1px #d0d0d0;
+    margin: 6px;
+}
+
+main section p {
+    margin-bottom: 0;
+    color: #909090;
+}
+
+
+main {
+    background-color: #e0e0e0;
+    padding: 12px;
+    color: #303030;
+
+    h1 {
+        font-size:2rem;
+        color: red;
+        margin: 12px 0;
+    }
+
+    section {
+        padding: 12px;
+        border: solid 1px #d0d0d0;
+        margin: 6px;
+
+        p {
+            margin-bottom: 0;
+            color: #909090;
+        }
+
+    }
+}
+
+
+/* Reason 3:  vendor prefixes */
+
+.round {
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-radius: 12px; 
+
+  /* Firefox 1-3.6 */
+  -moz-border-radius: 12px; 
+  
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: 12px; 
+}
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+.round {
+    @include vendor-prefix('border-radius', 12);
+}
+
+.round {
+    -webkit-border-radius: 12;
+    -ms-border-radius: 12;
+    -moz-border-radius: 12;
+    -o-border-radius: 12;
+    border-radius: 12;
+}
+
+
+
+
+
+.round {
+    @include border-radius(12);
+}
+
+
+
+

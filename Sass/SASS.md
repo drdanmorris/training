@@ -25,6 +25,6 @@ $ gem install bourbon
 And then in your project's css folder you can install the Bourbon files:
 
 ```
-$bourbon install
+$ bourbon install
 ```
 

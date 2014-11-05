@@ -1,53 +1,163 @@
+@import "bourbon/bourbon";
+
+
+
+
+$refcolor: #f6f9c6;
 $bgcolor: #f6f6f6;
 
-html {
-	font-size: 16px;  // reference font
-}
-
 body {
-	font-family: arial, helvetica, sans-serif;
-	background-color: $bgcolor;
-
-	h1 {
-		font-size: rem-calc(18);
-	}
+    font-family: arial, helvetica, sans-serif;
+    @include linear-gradient(135deg, $refcolor, lighten($refcolor, 25%));
 }
+
+
+
+
 
 $height: 100px;
 
-@mixin tile($color, $hpos, $vpos) {
-	background-color: $color;
-	#{$hpos}: 0;
-	#{$vpos}: 0;
-}
-
 div {
-	background-color: darken($bgcolor, 20);
-	height: $height * 2 + 20;
-	width: $height * 4 + 20;
-	position: relative;
+    background-color: darken($bgcolor, 20);
+    height: $height * 2 + 20;
+    width: $height * 4 + 20;
+    position: relative;
 
-	div {
-		height: $height;
-		width: $height * 2;
-		background-color: #f66;
-		position:absolute;
+    div {
+        height: $height;
+        width: $height * 2;
+        background-color: #f66;
+        position:absolute;
 
-		&:nth-child(1) {
-			@include tile(red, 'left', 'top');
-		}
+        // define mixin
+        @mixin tile($color, $hpos, $vpos, $deg) {
+            #{$hpos}: 0;
+            #{$vpos}: 0;
+            @include linear-gradient($deg, $color, lighten($color, 25%));
+        }
 
-		&:nth-child(2) {
-			@include tile(blue, 'right', 'top');
-		}
+        &:nth-child(1) {
+            // use mixin
+            @include tile(red, 'left', 'top', 135deg);
+        }
 
-		&:nth-child(3) {
-			@include tile(green, 'left', 'bottom');
-		}
+        &:nth-child(2) {
+            @include tile(blue, 'right', 'top', 225deg);
+        }
 
-		&:nth-child(4) {
-			@include tile(yellow, 'right', 'bottom');
-		}
-	}
+        &:nth-child(3) {
+            @include tile(green, 'left', 'bottom', 45deg);
+        }
 
+        &:nth-child(4) {
+            @include tile(yellow, 'right', 'bottom', 305deg);
+        }
+    }
+
+    button {
+        color: white;
+        background-color: yellow;
+        border: solid 1px black;
+
+        &.disabled {
+            background-color: #a0a0a0;
+            border-color: #606060;
+        }
+
+        &:hover {
+            background-color: pink;
+        }
+
+        &:active {
+            border-width: 2px;
+        }
+    }
+
+    .funky {
+        font: {
+            family: fantasy;
+            size: 30em;
+            weight: bold;
+        }
+    }
+
+
+    // BAD - do not do this:
+    @mixin my-button() {
+        border: solid 1px red;
+        border-radius: 3px;
+        padding: 6px 12px;
+        font-size: 0.9756rem;
+    }
+    .cool-button {
+        @include my-button();
+        color: blue;
+    }
+    .hot-button {
+        @include my-button();
+        color: red;
+    }
+    .reserved-button {
+        @include my-button();
+        color: black;
+    }
+
+
+    // BETTER STILL
+    .my-button {
+        border: solid 1px red;
+        border-radius: 3px;
+        padding: 6px 12px;
+        font-size: 0.9756rem;
+    }
+    .cool-button {
+        @extend .my-button;
+        color: blue;
+    }
+    .hot-button {
+        @extend .my-button;
+        color: red;
+    }
+    .reserved-button {
+        @extend .my-button;
+        color: black;
+    }
+
+
+    // OK, even though parameterless
+    .cards {
+        @include clearfix();
+
+        > .card {
+            float: left;
+            width: 100px;
+            height: 400px;
+            border: solid 1px black;
+        }
+    }
 }
+
+html {
+
+    body {
+
+        main {
+
+            .orders {
+
+                .inner {
+
+                    .line-item {
+
+                        h2 {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,2 @@
+// customerService.js
+var customerService = {};

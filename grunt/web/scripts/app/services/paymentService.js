@@ -1,0 +1,2 @@
+// paymentService.js
+var paymentService = {};

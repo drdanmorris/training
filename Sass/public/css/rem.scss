@@ -1,0 +1,21 @@
+@import "tools";
+
+html {
+	font-size: 16px;
+	font-family: arial, helvetica, sans-serif;
+
+	@media all and (min-width: 900px) {
+		font-size: 60px;
+	}
+
+	main {
+		font-size: rem-calc(24);
+		color: red;
+
+		div {
+			font-size: rem-calc(36);
+			color: blue; 
+		}
+	}
+
+}

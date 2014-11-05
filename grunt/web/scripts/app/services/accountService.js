@@ -1,0 +1,2 @@
+// accountService.js
+var accountService = {};

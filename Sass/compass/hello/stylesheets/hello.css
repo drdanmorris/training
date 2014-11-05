@@ -1,0 +1,53 @@
+/* line 3, ../sass/hello.scss */
+html {
+  font-family: calibri, arial, helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #303030;
+}
+
+/* line 9, ../sass/hello.scss */
+div {
+  width: 80px;
+  color: white;
+  font-weight: bold;
+  float: left;
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+}
+/* line 18, ../sass/hello.scss */
+div:nth-child(1) {
+  background-color: #993366;
+}
+/* line 21, ../sass/hello.scss */
+div:nth-child(2) {
+  background-color: #cc6699;
+}
+/* line 24, ../sass/hello.scss */
+div:nth-child(3) {
+  background-color: #4d1933;
+}
+/* line 27, ../sass/hello.scss */
+div:nth-child(4) {
+  background-color: rgba(153, 51, 102, 0.8);
+}
+/* line 30, ../sass/hello.scss */
+div:nth-child(5) {
+  background-color: #8b64b2;
+}
+/* line 33, ../sass/hello.scss */
+div:nth-child(6) {
+  background-color: #339966;
+}
+/* line 36, ../sass/hello.scss */
+div:nth-child(7) {
+  background-color: #cc0066;
+}
+/* line 39, ../sass/hello.scss */
+div:nth-child(8) {
+  background-color: #666666;
+}
+/* line 42, ../sass/hello.scss */
+div:nth-child(9) {
+  background-color: #66cc99;
+}

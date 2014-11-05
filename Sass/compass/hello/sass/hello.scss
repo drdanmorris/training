@@ -1,0 +1,45 @@
+$ref-color: #993366;
+
+html {
+	font-family: calibri, arial, helvetica, sans-serif;
+	font-size: 16px;
+	background-color: #303030;
+}
+
+div {
+	width: 80px;
+	color: white;
+	font-weight: bold;
+	float: left;
+	margin:20px;
+	text-align: center;
+	padding: 20px;
+
+	&:nth-child(1) {
+		background-color: $ref-color;
+	}
+	&:nth-child(2) {
+		background-color: lighten($ref-color, 20);
+	}
+	&:nth-child(3) {
+		background-color: darken($ref-color, 20);
+	}
+	&:nth-child(4) {
+		background-color: rgba($ref-color, 0.8);
+	}
+	&:nth-child(5) {
+		background-color: mix($ref-color, rgb(125,150,255));
+	}
+	&:nth-child(6) {
+		background-color: adjust-hue($ref-color, 180);
+	}
+	&:nth-child(7) {
+		background-color: saturate($ref-color, 90);
+	}
+	&:nth-child(8) {
+		background-color: desaturate($ref-color, 90);
+	}
+	&:nth-child(9) {
+		background-color: invert($ref-color);
+	}
+}
